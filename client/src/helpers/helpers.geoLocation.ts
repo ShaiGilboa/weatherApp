@@ -1,18 +1,3 @@
-const permissionGranted = (position :any) => {
-  console.log('position', position)
-  const ret = {
-    lat: position.coords.latitude,
-    lon: position.coords.longitude
-  }
-  console.log('ret', ret)
-  return ret
-}
-
-const permissionBlocked = (error : any) => {
-  console.log('errorB', error)
-  return false
-}
-
 export const getStartLocationWithPermission = async (setState : React.Dispatch<any>) => {
   try {
     if ("geolocation" in navigator) {
