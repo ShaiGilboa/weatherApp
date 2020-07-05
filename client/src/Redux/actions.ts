@@ -1,5 +1,5 @@
-import { ReduxAction } from './reducers/types';
-export const setWeather = (data : any) : ReduxAction => ({
-  type: 'SET_CURRENT',
+import { ReduxAction, APIData } from '../types';
+export const setWeather = (data : APIData) : ReduxAction => ({
+  type: 'SET_FORECAST',
   data
 })

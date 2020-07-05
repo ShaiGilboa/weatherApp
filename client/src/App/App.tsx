@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getStartLocationWithPermission } from '../helpers.geoLocation';
+import { getStartLocationWithPermission } from '../helpers/helpers.geoLocation';
 import { useDispatch } from 'react-redux';
 import { setWeather } from '../Redux/actions';
+import Hourly from '../components/HourlyWeather/HourlyWeather';
+import Daily from '../components/DailyWeather';
+import CurrentWeather from '../components/CurrentWeather/CurrentWeather';
 
 export interface Location {
   status: number,
@@ -36,7 +39,17 @@ function App() {
     }
   },[location])
   return (
-      <div>App</div>
+    <>
+      <CurrentWeather>
+
+      </CurrentWeather>
+      <Hourly>
+
+      </Hourly>
+      <Daily>
+
+      </Daily>
+    </>
   );
 }
 

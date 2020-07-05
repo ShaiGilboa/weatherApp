@@ -1,5 +1,6 @@
 import produce from 'immer';
-import { WeatherState, ReduxAction } from './types';
+import { WeatherState, ReduxAction } from '../../types';
+import { extractCurrent, extractDaily, extractHourly } from '../../helpers/helpers.extractAPI';
 
 const initialState : WeatherState = {
   status: 'loading', /* - loading
@@ -14,9 +15,12 @@ const initialState : WeatherState = {
 
 const appReducer = (state: WeatherState = initialState, action: ReduxAction) : WeatherState=> {
   switch (action.type) {
-    case 'SET_CURRENT':
+    case 'SET_FORECAST':
+      console.log('action', action)
       return produce(state, draftState => {
-        draftState.current = action.data;
+        draftState.current = extractCurrent(action.data.current);
+        draftState.hourly = extractHourly(action.data);
+        draftState.daily = extractDaily(action.data);
       });
     default:
       return state;

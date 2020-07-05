@@ -1,0 +1,1 @@
+export const IconUrl = 'http://openweathermap.org/img/wn/'
