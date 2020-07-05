@@ -1,4 +1,4 @@
-export interface State {
+export interface WeatherState {
   status: string,
   current: Current | null,
   hourly: Hourly | null,
@@ -17,7 +17,7 @@ export interface Daily {
   [key : string] : any,
 }
 
-export interface Action {
-  type: string,
-  data? : any,  
+export interface ReduxAction {
+  type : string,
+  [key : string] : any,
 }

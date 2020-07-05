@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getStartLocationWithPermission } from '../helpers.geoLocation';
+import { useDispatch } from 'react-redux';
+import { setWeather } from '../Redux/actions';
 
 export interface Location {
   status: number,
@@ -10,6 +12,7 @@ export interface Location {
 
 
 function App() {
+  const dispatch = useDispatch();
   const [location, setLocation] = useState<Location | null>(null)
   useEffect(()=>{
     getStartLocationWithPermission(setLocation)
@@ -21,7 +24,10 @@ function App() {
         console.log('we have location!')
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&units=metric&exclude={minutely}&appid=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
-          .then(res => console.log('res', res))
+          .then(res =>{
+            console.log('res', res)
+            dispatch(setWeather(res))
+          })
       } else if(location.status === 401) {
         console.log('access to location blocked')
       }
@@ -30,7 +36,7 @@ function App() {
     }
   },[location])
   return (
-    <div>App</div>
+      <div>App</div>
   );
 }
 
