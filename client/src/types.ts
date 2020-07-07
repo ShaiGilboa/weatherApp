@@ -3,6 +3,7 @@ export interface WeatherState {
   current: Current | null,
   hourly: Hourly | null,
   daily: Daily | null,
+  timeZone: string | number | null,
 }
 
 interface Rain_Snow {
@@ -17,11 +18,40 @@ interface Weather {
 }
 
 export interface Current {
-  time: number,
-  sunrise: number,
-  sunset: number,
+  unixTime: number,
+  time: string,
+  unixSunrise: number,
+  sunrise: string,
+  unixSunset: number,
+  sunset: string,
   temp: number | DailyTemp,
   feels_like: number | DailyFeelsLike,
+  humidity: number,
+  wind_speed: number,
+  rain?: any,
+  weather: Weather[],
+}
+
+export interface DailyInstance {
+  unixTime: number,
+  time: string,
+  unixSunrise: number,
+  sunrise: string,
+  unixSunset: number,
+  sunset: string,
+  temp: DailyTemp,
+  feels_like: DailyFeelsLike,
+  humidity: number,
+  wind_speed: number,
+  rain?: any,
+  weather: Weather[],
+}
+
+export interface HourlyInstance {
+  unixTime: number,
+  time: string,
+  temp: number,
+  feels_like: number,
   humidity: number,
   wind_speed: number,
   rain?: any,
@@ -40,9 +70,14 @@ export interface DailyFeelsLike {
 export interface DailyTemp extends DailyFeelsLike{
   max: number,
   min: number,
+  // morn: number,
+  // eve: number,
+  // day: number,
+  // night: number,
+
 }
 
-export type Daily = Current[]
+export type Daily = DailyInstance[]
 
 export interface ReduxAction {
   type : string,
