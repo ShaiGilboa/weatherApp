@@ -17,8 +17,6 @@ const HourlyWeather : React.FC<PropsWithChildren<props>> = () => {
   },[hourlyWeather])
   return (
     <Wrapper data-css='HourlyWeather'>
-      
-      Hourly
       {hourlyWeather?.map((anHour :HourlyInstance, index : number) => <OneHour key={`${index}${anHour.unixTime}`} current={anHour} />)}
     </Wrapper>
   )
@@ -28,6 +26,7 @@ export default HourlyWeather;
 
 const Wrapper = styled.div`
   overflow: auto;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
+  margin: 10px;
 `;

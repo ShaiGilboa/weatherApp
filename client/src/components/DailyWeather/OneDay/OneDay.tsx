@@ -11,30 +11,33 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
   console.log('current', current.feels_like)
   return (
     <Wrapper data-css='OneDay'>
-      <p>
-        sunrise: {current.sunrise}
-      </p>
-        <Date>
-          {current.day}, {current.date}
-        </Date>
+      <Date>
+        {current.day}, <span>{current.date}</span>
+      </Date>
+      <Content>
         <p>
-          sunset:  {current.sunset}
+          ↗️: {current.sunrise}, ↘️:  {current.sunset}
         </p>
         <Temp>
-          <p>morning: {current.temp.morn}°c</p>
-          <p>day: {current.temp.day}°c</p>
-          <p>evening: {current.temp.eve}°c</p>
-          <p>night: {current.temp.night}°c</p>
           <p>min: {current.temp.min}°c</p>
           <p>max: {current.temp.max}°c</p>
-          <p>feels like morning: {current.feels_like.morn}</p>
-          <p>feels like day: {current.feels_like.day}</p>
-          <p>feels like evening: {current.feels_like.eve}</p>
-          <p>feels like night: {current.feels_like.night}</p>
+        </Temp>
+        <Temp>
+          morning: {current.temp.morn}°c <p>{current.feels_like.morn}°c</p>
+        </Temp>
+        <Temp>
+          day: {current.temp.day}°c <p>{current.feels_like.day}°c</p>
+        </Temp>
+        <Temp>
+          evening: {current.temp.eve}°c <p>{current.feels_like.eve}°c</p>
+        </Temp>
+        <Temp>
+          night: {current.temp.night}°c <p>{current.feels_like.night}°c</p>
         </Temp>
         <Humidity>
-          {current.humidity}%
+        💦 {current.humidity}%
         </Humidity>
+      </Content>
     </Wrapper>
   )
 }
@@ -46,16 +49,39 @@ const Wrapper = styled.div`
 `;
 
 const Date = styled.div`
-  /* background: transparent; */
+  white-space: nowrap;
+  height: 20px;
+  font-size: 20px;
+  position: relative;
   width: fit-content;
+  padding: 0 5px;
+  text-align:center;
+  margin: 0 auto;
+  span{
+    font-size: 15px;
+  }
+`;
+
+const Content = styled.div`
+  border-top: 1px solid grey;
+  width: 100px;
+  p{
+    font-size: 10px;
+  }
 `;
 
 const Temp = styled.div`
-  width: fit-content;
-
+  font-size: 20px;
+  padding:5px;
+  text-align: center;
+  text-transform: capitalize;
+  p{
+    font-size: 10px;
+    margin-top: 0;
+  }
 `;
 
 const Humidity = styled.div`
-  width: fit-content;
-
+  font-size: 10px;
+  text-align: center;
 `;

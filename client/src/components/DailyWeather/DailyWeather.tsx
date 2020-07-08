@@ -17,7 +17,6 @@ const DailyWeather : React.FC<PropsWithChildren<props>> = () => {
   },[dailyWeather])
   return (
     <Wrapper data-css='DailyWeather'>
-      Daily
       {dailyWeather?.map((aDay : DailyInstance, index : number) => <OneDay key={`${index}${aDay.unixSunrise}`} current={aDay} /> )}
     </Wrapper>
   )
@@ -26,7 +25,8 @@ const DailyWeather : React.FC<PropsWithChildren<props>> = () => {
 export default DailyWeather;
 
 const Wrapper = styled.div`
-    width: 100%;
-  display: flex;
   overflow: auto;
+  /* width: 100%; */
+  display: flex;
+  margin: 10px;
 `;

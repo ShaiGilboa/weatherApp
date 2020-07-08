@@ -11,16 +11,18 @@ const OneHour : React.FC<PropsWithChildren<props>> = ({current}) => {
 
   return (
     <Wrapper data-css='OneHour'>
-      OneHour {current.time === '01:00' && <span>{current.day}, {current.date}</span>}
+      <TopGap>
+        {current.time === '01:00' && <DayChange>{current.day}, <span>{current.date}</span></DayChange>}
+      </TopGap>
       <Time>
           {current.time}
       </Time>
       <Temp>
-          {current.temp}°c <p>feels like: {current.feels_like}</p>
-        </Temp>
-        <Humidity>
-          {current.humidity}%
-        </Humidity>
+          {current.temp}°c <p>{current.feels_like}°c</p>
+      </Temp>
+      <Humidity>
+      💦 {current.humidity}%
+      </Humidity>
     </Wrapper>
   )
 }
@@ -28,21 +30,59 @@ const OneHour : React.FC<PropsWithChildren<props>> = ({current}) => {
 export default OneHour;
 
 const Wrapper = styled.div`
+  /* position:relative; */
   height: 200px;
-  
+  min-width: 71px;
+  max-width: 71px;
+  /* margin: 0 5px; */
+  /* padding: 5px 10px; */
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  justify-content:center;
+  div{
+    justify-content:center;
+    text-align:center;
+    justify-items: center;
+    align-items: center;
+  }
 `;
+
+const TopGap = styled.div`
+  white-space: nowrap;
+  height: 20px;
+  border-bottom: 1px solid grey;
+`;
+
+const DayChange = styled.div`
+  font-size: 20px;
+  position: relative;
+  width: fit-content;
+  text-align:center;
+  margin: 0 auto;
+  span{
+    font-size: 15px;
+  }
+`
 
 const Time = styled.div`
   /* background: transparent; */
+  font-size: 20px;
   width: fit-content;
+  padding: 5px;
+  margin: 0 auto;
 `;
 
 const Temp = styled.div`
-  width: fit-content;
-
+  /* width: fit-content; */
+  font-size: 20px;
+  padding-top:5px;
+  p{
+    font-size: 10px;
+    margin-top: 0;
+  }
 `;
 
 const Humidity = styled.div`
-  width: fit-content;
-
+  font-size: 10px;
 `;
