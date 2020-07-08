@@ -28,10 +28,11 @@ function App() {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&units=metric&exclude={minutely}&appid=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(res =>{
-            console.log('res', res.timezone)
+            console.log('res', res)
             console.log('res.timezone_offset', res.timezone_offset)
             dispatch(setWeather(res))
           })
+          .catch(err => console.log('err in initial fetch', err))
       } else if(location.status === 401) {
         console.log('access to location blocked')
       }

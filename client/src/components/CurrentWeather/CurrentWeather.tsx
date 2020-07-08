@@ -36,6 +36,12 @@ const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
         <Temp>
           {currentWeather.temp}°c <p>feels like: {currentWeather.feels_like}°c</p>
         </Temp>
+        <Weather>
+          {currentWeather.weather?.map((instance, index) => <WeatherInstance key={index}>
+            <p>{instance.main}</p>
+            <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
+          </WeatherInstance>)}
+        </Weather>  
         <Humidity>
         💦 {currentWeather.humidity}%
         </Humidity>
@@ -77,7 +83,24 @@ const Temp = styled.div`
   }
 `;
 
+const Weather = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const WeatherInstance = styled.div`
+  display: flex;
+  flex-direction: column;
+  p{
+    margin: 0;
+  }
+  img{
+    width: 50px;
+  }
+`;
+
 const Humidity = styled.div`
   width: fit-content;
+  font-size: 12px;
   margin: 0 auto;
 `;
