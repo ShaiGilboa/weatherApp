@@ -14,9 +14,9 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
       <p>
         sunrise: {current.sunrise}
       </p>
-        <Time>
-          {current.time}
-        </Time>
+        <Date>
+          {current.day}, {current.date}
+        </Date>
         <p>
           sunset:  {current.sunset}
         </p>
@@ -33,7 +33,7 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
           <p>feels like night: {current.feels_like.night}</p>
         </Temp>
         <Humidity>
-          {current.humidity.toString()}%
+          {current.humidity}%
         </Humidity>
     </Wrapper>
   )
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
 
 `;
 
-const Time = styled.div`
+const Date = styled.div`
   /* background: transparent; */
   width: fit-content;
 `;

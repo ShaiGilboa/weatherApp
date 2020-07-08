@@ -11,7 +11,7 @@ const OneHour : React.FC<PropsWithChildren<props>> = ({current}) => {
 
   return (
     <Wrapper data-css='OneHour'>
-      OneHour
+      OneHour {current.time === '01:00' && <span>{current.day}, {current.date}</span>}
       <Time>
           {current.time}
       </Time>

@@ -36,6 +36,8 @@ export interface DailyInstance {
   unixTime: number,
   time: string,
   unixSunrise: number,
+  day: string,
+  date: string,
   sunrise: string,
   unixSunset: number,
   sunset: string,
@@ -49,6 +51,8 @@ export interface DailyInstance {
 
 export interface HourlyInstance {
   unixTime: number,
+  day: string,
+  date: string,
   time: string,
   temp: number,
   feels_like: number,
@@ -58,7 +62,7 @@ export interface HourlyInstance {
   weather: Weather[],
 }
 
-export type Hourly = Current[]
+export type Hourly = HourlyInstance[]
 
 export interface DailyFeelsLike {
   day: number,

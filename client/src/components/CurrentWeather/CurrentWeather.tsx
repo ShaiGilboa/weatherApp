@@ -32,7 +32,7 @@ const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
           sunset:  {currentWeather.sunset}
         </p>
         <Temp>
-          {currentWeather.temp}°c <p>feels like: {currentWeather.feels_like}</p>
+          {currentWeather.temp}°c <p>feels like: {currentWeather.feels_like}°c</p>
         </Temp>
         <Humidity>
           {currentWeather.humidity}%
@@ -54,11 +54,18 @@ const Wrapper = styled.div`
 const Time = styled.div`
   /* background: transparent; */
   width: fit-content;
+  
 `;
 
 const Temp = styled.div`
   width: fit-content;
-
+  position: relative;
+  margin: 5px auto;
+  font-size: 20px;
+  p{
+    margin: 2px 0;
+    font-size: 15px;
+  }
 `;
 
 const Humidity = styled.div`
