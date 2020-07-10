@@ -74,11 +74,6 @@ export interface DailyFeelsLike {
 export interface DailyTemp extends DailyFeelsLike{
   max: number,
   min: number,
-  // morn: number,
-  // eve: number,
-  // day: number,
-  // night: number,
-
 }
 
 export type Daily = DailyInstance[]

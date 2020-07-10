@@ -21,11 +21,11 @@ const OneHour : React.FC<PropsWithChildren<props>> = ({current}) => {
           {current.temp}°c <p>{current.feels_like}°c</p>
       </Temp>
       <Weather>
-          {current.weather?.map((instance, index) => <WeatherInstance key={index}>
-            <p>{instance.main}</p>
-            <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
-          </WeatherInstance>)}
-        </Weather> 
+        {current.weather?.map((instance, index) => <WeatherInstance key={index}>
+          <p>{instance.main}</p>
+          <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
+        </WeatherInstance>)}
+      </Weather> 
       <Humidity>
       💦 {current.humidity}%
       </Humidity>
@@ -98,6 +98,7 @@ const WeatherInstance = styled.div`
   display: flex;
   flex-direction: column;
   p{
+    text-align: center;
     margin: 0;
   }
   img{

@@ -22,6 +22,12 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
           <p>min: {current.temp.min}°c</p>
           <p>max: {current.temp.max}°c</p>
         </Temp>
+        <Weather>
+          {current.weather?.map((instance, index) => <WeatherInstance key={index}>
+            <p>{instance.main}</p>
+            <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
+          </WeatherInstance>)}
+        </Weather> 
         <Temp>
           morning: {current.temp.morn}°c <p>{current.feels_like.morn}°c</p>
         </Temp>
@@ -84,4 +90,23 @@ const Temp = styled.div`
 const Humidity = styled.div`
   font-size: 10px;
   text-align: center;
+`;
+
+const Weather = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const WeatherInstance = styled.div`
+  display: flex;
+  flex-direction: column;
+  p{
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+  }
+  img{
+    width: 30px;
+    height: 30px;
+  }
 `;
