@@ -16,9 +16,9 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
         {current.day}, <span>{current.date}</span>
       </Date>
       <Content>
-        <p>
+        <Sun>
           ↗️: {current.sunrise}, ↘️:  {current.sunset}
-        </p>
+        </Sun>
         <Temp>
           <p>min: {current.temp.min}°c</p>
           <p>max: {current.temp.max}°c</p>
@@ -52,7 +52,7 @@ export default OneDay;
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  @media (min-width: ${MEDIA_GATES.desktop}) {
+  @media (min-width: ${MEDIA_GATES.tablet}) {
     width: 13%;
     height: 95%;
     /* margin: auto 0; */
@@ -80,9 +80,6 @@ const Content = styled.div`
   height: fit-content;
   flex-direction: column;
   justify-content: space-around;
-  p{
-    font-size: 10px;
-  }
   @media (min-width: ${MEDIA_GATES.tablet}) {
     width: 100%;
     height: 95%;
@@ -92,6 +89,15 @@ const Content = styled.div`
     width: 100%;
     height: 95%;
     /* margin: auto 0; */
+  }
+`;
+
+const Sun = styled.div`
+  font-size: 10px;
+  display: none;
+  @media (min-width: ${MEDIA_GATES.tablet}) {
+    display: block;
+    text-align: center;
   }
 `;
 

@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     justify-items: center;
     align-items: center;
   }
-  @media (min-width: ${MEDIA_GATES.desktop}) {
+  @media (min-width: ${MEDIA_GATES.tablet}) {
     height: 100%;
   }
 `;

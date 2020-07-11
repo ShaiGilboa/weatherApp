@@ -16,11 +16,12 @@ const DailyWeather : React.FC<PropsWithChildren<props>> = () => {
   useEffect(()=>{
     console.log('DailyWeather', dailyWeather)
   },[dailyWeather])
-  return (<Wrapper data-css='DailyWeather'>
+  return (
+    <Wrapper data-css='DailyWeather'>
       <h2>Daily</h2>
-    <Container>
-      {dailyWeather?.map((aDay : DailyInstance, index : number) => <OneDay key={`${index}${aDay.unixSunrise}`} current={aDay} /> )}
-    </Container>
+      <Container>
+        {dailyWeather?.map((aDay : DailyInstance, index : number) => <OneDay key={`${index}${aDay.unixSunrise}`} current={aDay} /> )}
+      </Container>
     </Wrapper>
   )
 }
