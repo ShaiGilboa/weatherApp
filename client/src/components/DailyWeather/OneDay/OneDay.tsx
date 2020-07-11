@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { DailyInstance } from '../../../types';
+import { MEDIA_GATES } from '../../../constants';
 
 interface props {
   style?: React.CSSProperties,
@@ -24,7 +25,6 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
         </Temp>
         <Weather>
           {current.weather?.map((instance, index) => <WeatherInstance key={index}>
-            <p>{instance.main}</p>
             <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
           </WeatherInstance>)}
         </Weather> 
@@ -51,7 +51,12 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
 export default OneDay;
 
 const Wrapper = styled.div`
-
+  box-sizing: border-box;
+  @media (min-width: ${MEDIA_GATES.desktop}) {
+    width: 13%;
+    height: 95%;
+    /* margin: auto 0; */
+  }
 `;
 
 const Date = styled.div`
@@ -71,13 +76,27 @@ const Date = styled.div`
 const Content = styled.div`
   border-top: 1px solid grey;
   width: 100px;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: space-around;
   p{
     font-size: 10px;
+  }
+  @media (min-width: ${MEDIA_GATES.tablet}) {
+    width: 100%;
+    height: 95%;
+    /* margin: 0 auto; */
+  }
+  @media (min-width: ${MEDIA_GATES.desktop}) {
+    width: 100%;
+    height: 95%;
+    /* margin: auto 0; */
   }
 `;
 
 const Temp = styled.div`
-  font-size: 20px;
+  font-size: 13px;
   padding:5px;
   text-align: center;
   text-transform: capitalize;
@@ -100,13 +119,8 @@ const Weather = styled.div`
 const WeatherInstance = styled.div`
   display: flex;
   flex-direction: column;
-  p{
-    font-size: 15px;
-    margin: 0;
-    text-align: center;
-  }
   img{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 `;

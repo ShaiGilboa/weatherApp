@@ -8,6 +8,7 @@ import Hourly from '../components/HourlyWeather/HourlyWeather';
 import Daily from '../components/DailyWeather';
 import CurrentWeather from '../components/CurrentWeather/CurrentWeather';
 import { MEDIA_GATES } from '../constants';
+import GlobalStyle from '../components/GlobalStyle';
 
 export interface Location {
   status: number,
@@ -44,6 +45,7 @@ function App() {
   },[location])
   return (
     <Wrapper>
+      <GlobalStyle />
       <CurrentWeather />
       <Hourly />
       <Daily />
@@ -54,7 +56,17 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
+  padding:10px;
+  box-sizing: border-box;
+  width: 100%;
   @media (min-width: ${MEDIA_GATES.tablet}) {
-    height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "current hourly"
+      "daily daily";
+    padding: 10px;
   }
 `

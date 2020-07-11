@@ -7,6 +7,7 @@ import * as format from 'date-fns';
 import sunriseGif from '../../assets/sunrise-transparent-sun-rise-5-original.gif';
 import Sunrise from './Sunrise';
 import Sunset from './Sunset';
+import { MEDIA_GATES } from '../../constants';
 
 interface props {
   style?: React.CSSProperties,
@@ -56,7 +57,20 @@ const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
 export default CurrentWeather;
 
 const Wrapper = styled.div`
+  grid-area: current;
   width: 100%;
+  box-sizing: border-box;
+  @media (min-width: ${MEDIA_GATES.tablet}) {
+    /* width: 100%;
+    height: 100%; */
+    /* width: 50vw; */
+    /* padding: 30px 10px 0 10px; */
+    height: 50%;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 `;
 
 const Topbar = styled.div`

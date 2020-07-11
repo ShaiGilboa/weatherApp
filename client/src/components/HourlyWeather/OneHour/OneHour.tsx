@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { HourlyInstance } from '../../../types';
+import { MEDIA_GATES } from '../../../constants';
 
 interface props {
   style?: React.CSSProperties,
@@ -22,7 +23,6 @@ const OneHour : React.FC<PropsWithChildren<props>> = ({current}) => {
       </Temp>
       <Weather>
         {current.weather?.map((instance, index) => <WeatherInstance key={index}>
-          <p>{instance.main}</p>
           <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
         </WeatherInstance>)}
       </Weather> 
@@ -37,20 +37,25 @@ export default OneHour;
 
 const Wrapper = styled.div`
   /* position:relative; */
-  height: 200px;
+  height: fit-content;
   min-width: 71px;
   max-width: 71px;
   /* margin: 0 5px; */
   /* padding: 5px 10px; */
+  height: 50%;
   display: flex;
   flex-direction: column;
   text-align:center;
   justify-content:center;
+  justify-content:space-around;
   div{
     justify-content:center;
     text-align:center;
     justify-items: center;
     align-items: center;
+  }
+  @media (min-width: ${MEDIA_GATES.desktop}) {
+    height: 100%;
   }
 `;
 
@@ -97,10 +102,6 @@ const Weather = styled.div`
 const WeatherInstance = styled.div`
   display: flex;
   flex-direction: column;
-  p{
-    text-align: center;
-    margin: 0;
-  }
   img{
     width: 30px;
     height: 30px;
