@@ -36,13 +36,9 @@ const OneHour : React.FC<PropsWithChildren<props>> = ({current}) => {
 export default OneHour;
 
 const Wrapper = styled.div`
-  /* position:relative; */
   height: fit-content;
   min-width: 71px;
   max-width: 71px;
-  /* margin: 0 5px; */
-  /* padding: 5px 10px; */
-  height: 50%;
   display: flex;
   flex-direction: column;
   text-align:center;
@@ -77,7 +73,6 @@ const DayChange = styled.div`
 `
 
 const Time = styled.div`
-  /* background: transparent; */
   font-size: 20px;
   width: fit-content;
   padding: 5px;
@@ -85,7 +80,6 @@ const Time = styled.div`
 `;
 
 const Temp = styled.div`
-  /* width: fit-content; */
   font-size: 20px;
   padding-top:5px;
   p{

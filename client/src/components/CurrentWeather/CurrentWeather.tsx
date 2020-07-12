@@ -60,13 +60,9 @@ const Wrapper = styled.div`
   grid-area: current;
   width: 100%;
   box-sizing: border-box;
-  @media (min-width: ${MEDIA_GATES.tablet}) {
-    /* width: 100%;
-    height: 100%; */
-    /* width: 50vw; */
-    /* padding: 30px 10px 0 10px; */
+  margin: auto 0;
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     height: 50%;
-    margin: auto 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -75,12 +71,11 @@ const Wrapper = styled.div`
 
 const Topbar = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 5px 10px;
 `
 
 const Time = styled.div`
-  /* background: transparent; */
   width: fit-content;
   text-align: center;
 `;

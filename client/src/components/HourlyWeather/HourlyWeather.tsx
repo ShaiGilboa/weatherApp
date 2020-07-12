@@ -31,23 +31,16 @@ export default HourlyWeather;
 const Wrapper = styled.div`
   grid-area: hourly;
   box-sizing: border-box;
-  /* margin: 10px 0; */
+  width: 100%;
   h2{
-    /* width: fit-content; */
     margin: 3px 0;
       margin-top: 0%;
-    /* margin-top: 50%; */
   }
-  @media (min-width: ${MEDIA_GATES.tablet}) {
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     width: 50vw;
-    /* height: 100%; */
     margin: auto 0;
   }
-  @media (min-width: ${MEDIA_GATES.desktop}) {
-    /* height: fit-content; */
-    /* margin: auto 0;
-    h2{
-    } */
+  @media (min-width: ${MEDIA_GATES.desktop}px) {
   }
 `;
 
@@ -55,14 +48,11 @@ const Container = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
-  /* width: 100%; */
-  /* height: 100%; */
-  @media (min-width: ${MEDIA_GATES.tablet}) {
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     height: 23vh;
     position: relative;
     bottom: 0;
-    /* height: 100%; */
   }
-  @media (min-width: ${MEDIA_GATES.desktop}) {
+  @media (min-width: ${MEDIA_GATES.desktop}px) {
   }
 `;

@@ -26,9 +26,6 @@ export default Sunrise;
 const Wrapper = styled.div`
   width: fit-content;
   height: fit-content;
-  /* div{
-    margin: auto 0;
-  } */
 `;
 
 const GifBoxSunrise = styled.div`

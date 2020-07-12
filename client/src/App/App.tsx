@@ -59,10 +59,17 @@ const Wrapper = styled.div`
   padding:10px;
   box-sizing: border-box;
   width: 100%;
-  @media (min-width: ${MEDIA_GATES.tablet}) {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-areas:
+    "current"
+    "hourly"
+    "daily";
+  padding: 10px;
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     height: 100%;
-    display: grid;
-    grid-auto-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "current hourly"

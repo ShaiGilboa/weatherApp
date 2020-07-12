@@ -52,10 +52,9 @@ export default OneDay;
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  @media (min-width: ${MEDIA_GATES.tablet}) {
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     width: 13%;
     height: 95%;
-    /* margin: auto 0; */
   }
 `;
 
@@ -80,22 +79,20 @@ const Content = styled.div`
   height: fit-content;
   flex-direction: column;
   justify-content: space-around;
-  @media (min-width: ${MEDIA_GATES.tablet}) {
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     width: 100%;
     height: 95%;
-    /* margin: 0 auto; */
   }
-  @media (min-width: ${MEDIA_GATES.desktop}) {
+  @media (min-width: ${MEDIA_GATES.desktop}px) {
     width: 100%;
     height: 95%;
-    /* margin: auto 0; */
   }
 `;
 
 const Sun = styled.div`
   font-size: 10px;
   display: none;
-  @media (min-width: ${MEDIA_GATES.tablet}) {
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     display: block;
     text-align: center;
   }

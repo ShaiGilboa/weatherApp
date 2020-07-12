@@ -30,21 +30,14 @@ export default DailyWeather;
 
 const Wrapper = styled.div`
   grid-area: daily;
-  /* display: flex; */
+    margin: auto 0 ;
   box-sizing: border-box;
-  /* width: 100%; */
-  /* margin: 10px; */
   h2 {
     margin: 3px 0;
     width: fit-content;
   }
-  @media (min-width: ${MEDIA_GATES.tablet}) {
-    /* margin: auto 0; */
-    /* box-sizing: border-box; */
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     width: 100%;
-    /* height: 100%; */
-    /* padding: 30px; */
-    /* margin-right: 10px; */
   }
 `;
 
@@ -56,13 +49,11 @@ const Container = styled.div`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* width: 100%; */
-  @media (min-width: ${MEDIA_GATES.tablet}) {
-    /* margin: 0 auto; */
+  @media (min-width: ${MEDIA_GATES.tablet}px) {
     margin: 0 auto;
     height: 95%;
   }
-  @media (min-width: ${MEDIA_GATES.desktop}) {
+  @media (min-width: ${MEDIA_GATES.desktop}px) {
     margin: 0 auto;
     height: 95%;
   }
