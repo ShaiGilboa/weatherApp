@@ -53,7 +53,7 @@ const Container = styled.div`
   overflow-y: hidden;
   display: flex;
   @media (min-width: ${MEDIA_GATES.tablet}px) {
-    height: 23vh;
+    height: fit-content;
     position: relative;
     bottom: 0;
   }
