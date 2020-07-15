@@ -29,6 +29,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Merriweather', serif;
+	color: #d3d3d3;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -39,6 +41,8 @@ body {
   line-height: 1;
   width: 100vw;
   height: 100vh;
+	margin: 0;
+	padding: 0;
 }
 ol, ul {
 	list-style: none;

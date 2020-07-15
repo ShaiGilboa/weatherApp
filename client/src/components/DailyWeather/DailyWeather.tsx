@@ -29,6 +29,11 @@ const DailyWeather : React.FC<PropsWithChildren<props>> = () => {
 export default DailyWeather;
 
 const Wrapper = styled.div`
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+
   grid-area: daily;
     margin: auto 0 ;
   box-sizing: border-box;

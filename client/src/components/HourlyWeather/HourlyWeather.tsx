@@ -29,16 +29,20 @@ const HourlyWeather : React.FC<PropsWithChildren<props>> = () => {
 export default HourlyWeather;
 
 const Wrapper = styled.div`
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+
   grid-area: hourly;
   box-sizing: border-box;
   width: 100%;
   h2{
     margin: 3px 0;
-      margin-top: 0%;
   }
   @media (min-width: ${MEDIA_GATES.tablet}px) {
     width: 50vw;
-    margin: auto 0;
+    margin: auto 10px;
   }
   @media (min-width: ${MEDIA_GATES.desktop}px) {
   }

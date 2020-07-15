@@ -1,5 +1,6 @@
 import { APIData, Current, Hourly, APICurrent, Daily, HourlyInstance, DailyInstance } from '../types';
 import * as DateFns from 'date-fns';
+import { BackgroundState } from '../App/App';
 
 export const extractCurrent = (oneCurrent : APICurrent) => {
   const current : Current = {
@@ -75,4 +76,9 @@ const extractDailyInstance = (oneCurrent : APICurrent) => {
 export const extractDaily = (data : APIData) => {
   const daily : Daily = data.daily.map((oneDay : APICurrent) => extractDailyInstance(oneDay))
   return daily;
+}
+
+export const backgroundFromAPI = (main : string) => {
+  if(main === "Clear" || main === "Thunderstorm" || main === "Drizzle" || main === "Rain" || main === "Snow" || main === "Clouds") return main
+  return "Clear"
 }
