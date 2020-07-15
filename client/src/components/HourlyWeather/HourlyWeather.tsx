@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react';
+import React, { PropsWithChildren, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Hourly, WeatherState, HourlyInstance } from '../../types';
 import { useSelector } from 'react-redux';
@@ -11,17 +11,66 @@ interface props {
   
 };
 
+export function useInterval(callback : any, delay : number) {
+  const savedCallback = React.useRef<any>();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
+
 const HourlyWeather : React.FC<PropsWithChildren<props>> = () => {
+  const hoursContainerRef = useRef<HTMLDivElement>(null);
   const hourlyWeather : Hourly | null = useSelector((state : RootState) => state.weather.hourly)
+
   useEffect(()=>{
     console.log('hourlyWeather', hourlyWeather)
   },[hourlyWeather])
+
+  const scroll = (direction : string) => {
+    if(hoursContainerRef && hoursContainerRef.current){
+      // const scrollInterval = setInterval(() => {
+        // if(hoursContainerRef && hoursContainerRef.current){
+          // let scrollAmount = 0;
+          if(direction === 'back'){
+            hoursContainerRef.current.scrollLeft -=70;
+          } else {
+            hoursContainerRef.current.scrollLeft +=70;
+          }
+            // scrollAmount +=10;
+            // if(scrollAmount > 70) clearInterval(scrollInterval)
+          // }
+        // }, 25)
+    }
+  }
+
   return (
     <Wrapper data-css='HourlyWeather'>
       <h2>Hourly</h2>
-      <Container>
+      <Container ref={hoursContainerRef}>
         {hourlyWeather?.map((anHour :HourlyInstance, index : number) => <OneHour key={`${index}${anHour.unixTime}`} current={anHour} />)}
       </Container>
+      <Buttons>
+        <Back
+          onClick={()=>scroll('back')}
+        >{"<"}</Back>
+        <Forward
+          onClick={()=>scroll('forward')}
+        >{">"}</Forward>
+      </Buttons>
     </Wrapper>
   )
 }
@@ -52,6 +101,7 @@ const Container = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
+  scroll-snap-type: both mandatory;
   @media (min-width: ${MEDIA_GATES.tablet}px) {
     height: fit-content;
     position: relative;
@@ -59,4 +109,34 @@ const Container = styled.div`
   }
   @media (min-width: ${MEDIA_GATES.desktop}px) {
   }
+`;
+
+const Buttons = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  display: none;
+  @media (min-width: ${MEDIA_GATES.desktop}px) {
+  display: flex;
+  }
+`;
+
+const Back = styled.button`
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: #d3d3d3;
+  font-weight: 800;
+  width: 50px;
+`;
+
+const Forward = styled.button`
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: #d3d3d3;
+  font-weight: 800;
+  width: 50px;
 `;

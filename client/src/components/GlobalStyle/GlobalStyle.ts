@@ -31,6 +31,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	font-family: 'Merriweather', serif;
 	color: #d3d3d3;
+scroll-behavior: smooth;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

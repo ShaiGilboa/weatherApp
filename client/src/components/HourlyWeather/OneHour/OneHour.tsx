@@ -44,6 +44,8 @@ const Wrapper = styled.div`
   text-align:center;
   justify-content:center;
   justify-content:space-around;
+
+  scroll-snap-align: start;
   div{
     justify-content:center;
     text-align:center;
