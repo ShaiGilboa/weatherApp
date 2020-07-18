@@ -25,7 +25,7 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
         </Temp>
         <Weather>
           {current.weather?.map((instance, index) => <WeatherInstance key={index}>
-            <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
+            <img src={`https://openweathermap.org/img/wn/${instance.icon}.png`} />
           </WeatherInstance>)}
         </Weather> 
         <Temp>

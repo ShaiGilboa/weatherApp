@@ -40,7 +40,7 @@ const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
         <Weather>
           {currentWeather.weather?.map((instance, index) => <WeatherInstance key={index}>
             <p>{instance.main}</p>
-            <img src={`http://openweathermap.org/img/wn/${instance.icon}.png`} />
+            <img src={`https://openweathermap.org/img/wn/${instance.icon}.png`} />
           </WeatherInstance>)}
         </Weather>  
         <Humidity>
