@@ -38,18 +38,11 @@ const HourlyWeather : React.FC<PropsWithChildren<props>> = () => {
 
   const scroll = (direction : string) => {
     if(hoursContainerRef && hoursContainerRef.current){
-      // const scrollInterval = setInterval(() => {
-        // if(hoursContainerRef && hoursContainerRef.current){
-          // let scrollAmount = 0;
-          if(direction === 'back'){
-            hoursContainerRef.current.scrollLeft -=70;
-          } else {
-            hoursContainerRef.current.scrollLeft +=70;
-          }
-            // scrollAmount +=10;
-            // if(scrollAmount > 70) clearInterval(scrollInterval)
-          // }
-        // }, 25)
+      if(direction === 'back'){
+        hoursContainerRef.current.scrollLeft -=70;
+      } else {
+        hoursContainerRef.current.scrollLeft +=70;
+      }
     }
   }
 
@@ -111,6 +104,7 @@ const Buttons = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top:3px;
   display: none;
   @media (min-width: ${MEDIA_GATES.desktop}px) {
   display: flex;

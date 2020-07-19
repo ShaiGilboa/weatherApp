@@ -6,9 +6,16 @@ export const GlobalStyle = createGlobalStyle`
   License: none (public domain)
 */
 /* width */
+/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+body {overflow: -moz-scrollbars-none;}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -31,8 +38,11 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	font-family: 'Merriweather', serif;
 	color: #d3d3d3;
-scroll-behavior: smooth;
+	scroll-behavior: smooth;
 
+/* Hide scrollbar for IE, Edge and Firefox */
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
