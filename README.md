@@ -24,3 +24,15 @@
   <li>once cloned, move to <i>client</i> in your terminal of choice and run "<b><i>yarn start</b></i>" or "<b><i>npm start</b></i>".
   <li>enjoy!</li>
 </ul>
+
+---
+## Contact
+
+If you want to contact me you can reach me at <shizel@gmail.com>.
+
+---
+### Resources
+<ul>
+  <li><a href="https://openweathermap.org/api/one-call-api" alt='WeatherAPIURL' >Weather API</a> (https://openweathermap.org/api/one-call-api)</li>
+  <li>Loading animation: https://codepen.io/tholman/pen/yenku</li>
+</ul>
