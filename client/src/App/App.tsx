@@ -39,7 +39,7 @@ function App() {
   useEffect(()=>{
     if(location) {
       if(location.status === 200) {
-        console.log('we have location!')
+        // console.log('we have location!')
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&units=metric&exclude={minutely}&appid=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(res =>{

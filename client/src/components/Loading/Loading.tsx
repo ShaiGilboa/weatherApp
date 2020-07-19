@@ -48,6 +48,7 @@ const Loading : React.FC<PropsWithChildren<props>> = () => {
       
     <div className="text">
       LOOKING OUTSIDE FOR YOU... ONE SEC
+      <p className='p'>you will need to share your location</p>
     </div>
   </div>
   )
