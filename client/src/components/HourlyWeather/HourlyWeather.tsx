@@ -36,10 +36,6 @@ const HourlyWeather : React.FC<PropsWithChildren<props>> = () => {
   const hoursContainerRef = useRef<HTMLDivElement>(null);
   const hourlyWeather : Hourly | null = useSelector((state : RootState) => state.weather.hourly)
 
-  useEffect(()=>{
-    console.log('hourlyWeather', hourlyWeather)
-  },[hourlyWeather])
-
   const scroll = (direction : string) => {
     if(hoursContainerRef && hoursContainerRef.current){
       // const scrollInterval = setInterval(() => {

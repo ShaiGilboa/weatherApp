@@ -14,11 +14,7 @@ interface props {
 
 const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
   const currentWeather : Current | null = useSelector((state : RootState) => state.weather.current)
-  useEffect(()=>{
-    if(currentWeather && currentWeather.time){
-      console.log('currentWeather', currentWeather)
-    }
-  },[currentWeather])
+
   return (
     <Wrapper data-css='CurrentWeather'>
       {currentWeather ? (

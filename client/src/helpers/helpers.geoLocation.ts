@@ -8,13 +8,13 @@ export const getStartLocationWithPermission = async (setState : React.Dispatch<a
           lon: position.coords.longitude
         })
       }, (error : any) => {
-        console.log('errorB', error)
+        console.log('error in geolocation', error)
         setState({status: 401})
       })
     } else {
       setState({status: 401})
     }    
   } catch (error) {
-    console.log('errorP', error)
+    console.log('error in outer geolocation', error)
   }
 }

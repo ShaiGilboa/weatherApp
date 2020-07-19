@@ -13,9 +13,7 @@ interface props {
 
 const DailyWeather : React.FC<PropsWithChildren<props>> = () => {
   const dailyWeather : Daily | null = useSelector((state : RootState) => state.weather.daily)
-  useEffect(()=>{
-    console.log('DailyWeather', dailyWeather)
-  },[dailyWeather])
+
   return (
     <Wrapper data-css='DailyWeather'>
       <h2>Daily</h2>

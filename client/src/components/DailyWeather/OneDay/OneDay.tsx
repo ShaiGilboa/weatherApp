@@ -9,7 +9,6 @@ interface props {
 };
 
 const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
-  console.log('current', current.feels_like)
   return (
     <Wrapper data-css='OneDay'>
       <Date>
