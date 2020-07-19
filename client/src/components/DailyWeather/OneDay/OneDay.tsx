@@ -17,7 +17,7 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
       </Date>
       <Content>
         <Sun>
-          ↗️: {current.sunrise}, ↘️:  {current.sunset}
+        <span role='img' aria-label='sunrise'>↗️</span>: {current.sunrise}, <span role='img' aria-label='sunset'>↘️</span>:  {current.sunset}
         </Sun>
         <Temp>
           <p>min: {current.temp.min}°c</p>
@@ -25,7 +25,7 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
         </Temp>
         <Weather>
           {current.weather?.map((instance, index) => <WeatherInstance key={index}>
-            <img src={`https://openweathermap.org/img/wn/${instance.icon}.png`} />
+            <img src={`https://openweathermap.org/img/wn/${instance.icon}.png`} alt='weather=icon'/>
           </WeatherInstance>)}
         </Weather> 
         <Temp>
@@ -41,7 +41,7 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
           night: {current.temp.night}°c <p>{current.feels_like.night}°c</p>
         </Temp>
         <Humidity>
-        💦 {current.humidity}%
+        <span role='img' aria-label='humidity'>💦</span> {current.humidity}%
         </Humidity>
       </Content>
     </Wrapper>

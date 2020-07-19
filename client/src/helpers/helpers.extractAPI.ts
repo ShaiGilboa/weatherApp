@@ -1,6 +1,5 @@
 import { APIData, Current, Hourly, APICurrent, Daily, HourlyInstance, DailyInstance } from '../types';
 import * as DateFns from 'date-fns';
-import { BackgroundState } from '../App/App';
 
 export const extractCurrent = (oneCurrent : APICurrent) => {
   const current : Current = {

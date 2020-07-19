@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useEffect } from 'react';
 import styled from 'styled-components';
-import { Daily, WeatherState, Current, DailyInstance } from '../../types';
+import { Daily, DailyInstance } from '../../types';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Redux/Store';
 import OneDay from './OneDay/OneDay';

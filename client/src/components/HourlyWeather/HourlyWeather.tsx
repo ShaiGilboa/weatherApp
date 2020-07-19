@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { Hourly, WeatherState, HourlyInstance } from '../../types';
+import { Hourly, HourlyInstance } from '../../types';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Redux/Store';
 import OneHour from './OneHour';

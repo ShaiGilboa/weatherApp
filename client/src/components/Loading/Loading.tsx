@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import styled from 'styled-components';
 import './styles.css';
 
 interface props {
@@ -55,7 +54,3 @@ const Loading : React.FC<PropsWithChildren<props>> = () => {
 }
 
 export default Loading;
-
-const Wrapper = styled.div`
-
-`;

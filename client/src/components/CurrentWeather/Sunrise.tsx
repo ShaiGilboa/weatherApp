@@ -12,7 +12,7 @@ const Sunrise : React.FC<PropsWithChildren<props>> = ({time}) => {
   return (
     <Wrapper data-css='Sunrise'>
         <GifBoxSunrise>
-            <img src={sunriseGif}/>
+            <img src={sunriseGif} alt='sunrise'/>
           </GifBoxSunrise>
           <div style={{marginTop:'3px'}}>
             {time}

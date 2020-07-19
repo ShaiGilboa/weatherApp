@@ -9,7 +9,6 @@ import Daily from '../components/DailyWeather';
 import CurrentWeather from '../components/CurrentWeather/CurrentWeather';
 import { MEDIA_GATES } from '../constants';
 import GlobalStyle from '../components/GlobalStyle';
-import { type } from 'os';
 import { backgroundFromAPI } from '../helpers/helpers.extractAPI';
 import { RootState } from '../Redux/Store';
 import Loading from '../components/Loading';
@@ -55,7 +54,7 @@ function App() {
     } else {
       console.log('waiting for user to respond to location request')
     }
-  },[location])
+  },[location, dispatch])
   return (<>
       <GlobalStyle />
       { info.current 

@@ -11,7 +11,7 @@ const Sunset : React.FC<PropsWithChildren<props>> = ({time}) => {
   return (
     <Wrapper data-css='Sunset'>
       <GifBox>
-        <iframe src="https://giphy.com/embed/3ov9jLYWb4zCjGfqIE" frameBorder="0"  allowFullScreen></iframe>
+        <iframe title='sunset' src="https://giphy.com/embed/3ov9jLYWb4zCjGfqIE" frameBorder="0"  allowFullScreen></iframe>
       </GifBox>
       <div>
         {time}

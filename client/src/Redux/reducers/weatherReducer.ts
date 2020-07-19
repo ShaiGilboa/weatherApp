@@ -1,7 +1,6 @@
 import produce from 'immer';
 import { WeatherState, ReduxAction } from '../../types';
 import { extractCurrent, extractDaily, extractHourly } from '../../helpers/helpers.extractAPI';
-import format from 'date-fns';
 
 const initialState : WeatherState = {
   status: 'loading', /* - loading

@@ -1,10 +1,8 @@
 import React, { PropsWithChildren, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { Current, WeatherState } from '../../types';
+import { Current } from '../../types';
 import { RootState } from '../../Redux/Store';
-import * as format from 'date-fns';
-import sunriseGif from '../../assets/sunrise-transparent-sun-rise-5-original.gif';
 import Sunrise from './Sunrise';
 import Sunset from './Sunset';
 import { MEDIA_GATES } from '../../constants';
@@ -16,7 +14,6 @@ interface props {
 
 const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
   const currentWeather : Current | null = useSelector((state : RootState) => state.weather.current)
-  let formattedTime : any;
   useEffect(()=>{
     if(currentWeather && currentWeather.time){
       console.log('currentWeather', currentWeather)
@@ -40,11 +37,11 @@ const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
         <Weather>
           {currentWeather.weather?.map((instance, index) => <WeatherInstance key={index}>
             <p>{instance.main}</p>
-            <img src={`https://openweathermap.org/img/wn/${instance.icon}.png`} />
+            <img src={`https://openweathermap.org/img/wn/${instance.icon}.png`} alt='weatherIcon'/>
           </WeatherInstance>)}
         </Weather>  
         <Humidity>
-        💦 {currentWeather.humidity}%
+        <span role='img' aria-label='humidity'>💦</span> {currentWeather.humidity}%
         </Humidity>
       </>
       ) : (
