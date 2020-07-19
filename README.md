@@ -14,6 +14,7 @@
 <img src='./assets/Thunderstorm.jpg' alt='Thunderstorm-weather' width="40%"/>
 </div>
 ---
+
 ### Info
 <p>This app was built using <i><b>create-react-app</b></i> <i>--template typescript</i>. if you want to run it on your machine:<p>
 <ul>
