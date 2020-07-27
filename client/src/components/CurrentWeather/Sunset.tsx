@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 `;
 
 const GifBox = styled.div`
-  width: 20px;
+  width: 40px;
   height: 20px;
   overflow: hidden;
   align-content: center;
@@ -39,10 +39,10 @@ const GifBox = styled.div`
   display: inline-block;
   iframe {
     margin: 0 auto;
-    width: 40px;
-    height: 40px;
+    /* width: 40px; */
+    height: 54px;
     position: relative;
-    left: -10px;
-    top: -10px;
+    /* left: -10px; */
+    top: -17px;
   }
 `;

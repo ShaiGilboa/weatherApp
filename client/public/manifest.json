@@ -1,6 +1,6 @@
 {
-  "short_name": "Weather App",
   "name": "What's the weather here?",
+  "short_name": "Weather here?",
   "icons": [
     {
       "src": "favicon.ico",
