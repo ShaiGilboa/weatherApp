@@ -4,7 +4,7 @@
 
 ---
 ## Screenshots
-<div id="test">
+<div>
 <img src='./assets/Clear.jpg' alt='Clear-weather' width="40%"/>
 <img src='./assets/Cloudy.jpg' alt='Cloudy-weather' width="40%"/>
 <img src='./assets/LoadingLocation.jpg' alt='LoadingLocation' width="40%"/>
