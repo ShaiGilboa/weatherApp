@@ -87,7 +87,7 @@ const Wrapper = styled.div`
   width: 100vw;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-rows: 1.7fr 1fr 2.3fr;
   grid-template-areas:
     "current"
     "hourly"
