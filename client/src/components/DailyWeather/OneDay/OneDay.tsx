@@ -19,8 +19,10 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
         <span role='img' aria-label='sunrise'>↗️</span>: {current.sunrise}, <span role='img' aria-label='sunset'>↘️</span>:  {current.sunset}
         </Sun>
         <Temp>
-          <p>min: {current.temp.min}°c</p>
-          <p>max: {current.temp.max}°c</p>
+          min: {current.temp.min}°c
+          <br />
+          <br />
+          max: {current.temp.max}°c
         </Temp>
         <Weather>
           {current.weather?.map((instance, index) => <WeatherInstance key={index}>
@@ -28,16 +30,16 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
           </WeatherInstance>)}
         </Weather> 
         <Temp>
-          morning: {current.temp.morn}°c <p>{current.feels_like.morn}°c</p>
+          <p>morning:</p>  {current.temp.morn}°c <br />{current.feels_like.morn}°c
         </Temp>
         <Temp>
-          day: {current.temp.day}°c <p>{current.feels_like.day}°c</p>
+          <p>day:</p>  {current.temp.day}°c <br /> {current.feels_like.day}°c
         </Temp>
         <Temp>
-          evening: {current.temp.eve}°c <p>{current.feels_like.eve}°c</p>
+          <p>evening:</p> {current.temp.eve}°c <br /> {current.feels_like.eve}°c
         </Temp>
         <Temp>
-          night: {current.temp.night}°c <p>{current.feels_like.night}°c</p>
+          <p>night:</p> {current.temp.night}°c <br /> {current.feels_like.night}°c
         </Temp>
         <Humidity>
         <span role='img' aria-label='humidity'>💦</span> {current.humidity}%
@@ -103,8 +105,11 @@ const Temp = styled.div`
   text-align: center;
   text-transform: capitalize;
   p{
-    font-size: 10px;
-    margin-top: 0;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4px;
+    text-decoration: underline;
   }
 `;
 
