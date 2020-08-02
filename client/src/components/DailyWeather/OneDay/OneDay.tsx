@@ -30,16 +30,16 @@ const OneDay : React.FC<PropsWithChildren<props>> = ({current}) => {
           </WeatherInstance>)}
         </Weather> 
         <Temp>
-          <p>morning:</p>  {current.temp.morn}°c <br />{current.feels_like.morn}°c
+          <p>morning:</p>  {current.temp.morn}°c <span> ~{current.feels_like.morn}°c</span>
         </Temp>
         <Temp>
-          <p>day:</p>  {current.temp.day}°c <br /> {current.feels_like.day}°c
+          <p>day:</p>  {current.temp.day}°c <span> ~{current.feels_like.day}°c</span>
         </Temp>
         <Temp>
-          <p>evening:</p> {current.temp.eve}°c <br /> {current.feels_like.eve}°c
+          <p>evening:</p> {current.temp.eve}°c <span> ~{current.feels_like.eve}°c</span> 
         </Temp>
         <Temp>
-          <p>night:</p> {current.temp.night}°c <br /> {current.feels_like.night}°c
+          <p>night:</p> {current.temp.night}°c <span> ~{current.feels_like.night}°c</span> 
         </Temp>
         <Humidity>
         <span role='img' aria-label='humidity'>💦</span> {current.humidity}%
@@ -92,6 +92,7 @@ const Content = styled.div`
 
 const Sun = styled.div`
   font-size: 10px;
+  margin: 4px 0;
   display: none;
   @media (min-width: ${MEDIA_GATES.tablet}px) {
     display: block;
@@ -111,11 +112,15 @@ const Temp = styled.div`
     margin-bottom: 4px;
     text-decoration: underline;
   }
+  span {
+    font-size: 10px;
+  }
 `;
 
 const Humidity = styled.div`
   font-size: 10px;
   text-align: center;
+  margin-top: 5px;
 `;
 
 const Weather = styled.div`
