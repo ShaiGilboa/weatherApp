@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react';
+import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { Daily, DailyInstance } from '../../types';
 import { useSelector } from 'react-redux';

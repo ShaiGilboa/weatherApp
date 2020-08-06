@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react';
+import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Current } from '../../types';
