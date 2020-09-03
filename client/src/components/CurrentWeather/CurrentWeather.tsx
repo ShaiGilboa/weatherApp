@@ -50,11 +50,12 @@ const CurrentWeather : React.FC<PropsWithChildren<props>> = () => {
 export default CurrentWeather;
 
 const Wrapper = styled.div`
+  grid-area: current;
+  
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   padding: 10px;
-  grid-area: current;
   width: 100%;
   box-sizing: border-box;
   margin: auto 0;

@@ -67,12 +67,13 @@ const HourlyWeather : React.FC<PropsWithChildren<props>> = () => {
 export default HourlyWeather;
 
 const Wrapper = styled.div`
+  grid-area: hourly;
+  
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   padding: 10px;
 
-  grid-area: hourly;
   box-sizing: border-box;
   width: 100%;
   h2{

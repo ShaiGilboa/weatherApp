@@ -42,8 +42,8 @@ function App() {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&units=metric&exclude={minutely}&appid=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(res =>{
-            // setBackground("Clear")
-            setBackground(backgroundFromAPI(res.current.weather[0].main))
+            setBackground("Clear")
+            // setBackground(backgroundFromAPI(res.current.weather[0].main))
             dispatch(setWeather(res))
           })
           .catch(err => console.log('err in initial fetch', err))
