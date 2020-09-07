@@ -1,9 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
 import morgan from 'morgan';
-import path from 'path';
-import fs from 'fs';
-import { tmpdir } from 'os';
-
 
 const PORT : number | string = process.env.PORT || 4000;
 
